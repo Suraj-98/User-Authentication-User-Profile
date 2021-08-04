@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block maincontent %}
+
+
+<h1><p>it's HOMEPAGE</p></h1>
+
+<h2><p>Hello {{ user.username }}!</p></h2>
+<div>
+    <div class="row">
+      {% for x in img %}
+      <div class="col-sm-4">
+        <div class="card m-2">
+          <img src="{{x.file.url}}" alt="" class="card-img-top" width="170" height="250" >
+          
+          
+    
+        </div>
+      </div>
+{% endfor %}
+{% endblock %}
