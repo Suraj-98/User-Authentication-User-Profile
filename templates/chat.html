@@ -1,0 +1,36 @@
+{% extends "base.html"%}
+{% load crispy_forms_tags  %}
+{% block maincontent %}
+
+
+
+
+
+    <div class="container py-5"  enctype="multipart/form-data">
+        <h1> Chat Box</h1>
+        <table>
+        <form method="POST"  enctype="multipart/form-data">
+            
+            {% csrf_token %}
+            {{form|crispy}}   
+    </div>
+    
+<br>
+<button class="btn btn-outline-warning"  type="submit" >Send Message</button>
+
+    </table>
+
+   
+</form>
+<div>
+    <div class="row">
+      {% for x in msg %}
+      <div class="col-sm-4">
+        <div class="card m-2">
+          
+     
+    
+        </div>
+      </div>
+{% endfor %}
+{% endblock %}
