@@ -1,0 +1,36 @@
+{% extends "base.html"%}
+{% load crispy_forms_tags  %}
+{% block maincontent %}
+
+
+
+
+
+    <div class="container py-5"  enctype="multipart/form-data">
+        <h1>upload Your Post</h1>
+        <table>
+        <form method="POST"  enctype="multipart/form-data">
+            
+            {% csrf_token %}
+            {{form|crispy}}   
+    </div>
+    
+<br>
+<button class="btn btn-outline-warning"  type="submit" >Post</button>
+
+    </table>
+
+   
+</form>
+<div>
+    <div class="row">
+      {% for x in img %}
+      <div class="col-sm-4">
+        <div class="card m-2">
+          <img src="{{x.file.url}}" alt="" class="card-img-top" height="200px">
+     
+    
+        </div>
+      </div>
+{% endfor %}
+{% endblock %}
