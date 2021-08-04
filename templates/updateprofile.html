@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags  %}
+{% block maincontent %}
+   
+
+<div class="container py-5" enctype="multipart/form-data">
+	<h1>Update Your Profile</h1>
+	<table>
+	<form method="POST" enctype="multipart/form-data">
+        
+		{% csrf_token %}
+		{% csrf_token %}
+		{{form1|crispy}}
+		{{form|crispy}}   
+		
+	
+		
+	
+	
+
+</div>
+<br>
+
+<button class="btn btn-outline-warning"  type="submit" >Create</button>
+</form>
+
+</table>
+{% endblock %}
