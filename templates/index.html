@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags  %}
+{% block maincontent %}
+   
+
+<div class="container py-5">
+	<h1>sign in</h1>
+	<table>
+	<form method="POST">
+        
+		{% csrf_token %}
+		{{form|crispy}}   
+		
+</div>
+<br>
+
+<a href="http://localhost:8000/website/homepage"></a><button class="btn btn-outline-warning"  type="submit" >Sign in</button><a>
+<br>
+if you have't an account <a href="http://localhost:8000/website/signuppage">sign up</a>
+<style>.helptext{
+        visibility: hidden;
+      }
+</style>
+
+
+</form>
+
+</table>
+
+{%  if request.session %}
+
+<p>{{ request.session.msg }} </p>
+{% endif %}
+{% endblock %}
