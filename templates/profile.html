@@ -1,0 +1,40 @@
+{% extends "base.html"%}
+{% load static %}
+{% load crispy_forms_tags  %}
+{% block maincontent %} 
+<form>
+<h3><p>
+{%  if request.session %}
+
+{{ request.session.msg }} </p></h3>
+{% endif %}
+
+
+<div>
+<div class="row">
+  
+  <div class="col-sm-4">
+    <div class="card m-2">
+      <img src="{{profilephotos.image.url}}" alt="" class="card-img-top" height="200px">
+      
+
+    </div>
+  </div>
+   
+
+</div>
+</div>
+{{user.updateprofileimage.image}}
+<p><h5>{{ user.username }}</h5>
+  <h6>{{user.first_name}} {{user.last_name}}</h6>
+  {{user.email}}
+  <br>
+  {{user.bio}}
+</p>
+<a href="http://localhost:8000/website/updateprofile">Edit Your Profile</a>
+<br>
+<a href="http://localhost:8000/website/signoutpage">Sign out</a>
+</form>
+
+
+{% endblock %}
